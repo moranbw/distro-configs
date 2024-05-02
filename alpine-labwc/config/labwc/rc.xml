@@ -1,0 +1,84 @@
+
+<?xml version="1.0"?>
+
+<!--
+  This is a very simple config file with many options missing. For a complete
+  set of options with comments, see docs/rc.xml.all
+-->
+
+<labwc_config>
+
+  <theme>
+    <name>Dracula-Openbox</name>
+    <cornerRadius>8</cornerRadius>
+    <font name="Overpass" size="10" />
+  </theme>
+
+  <placement>
+    <policy>cursor</policy>
+  </placement>
+
+  <keyboard>
+    <default />
+    <keybind key="W-o">
+      <action name="ShowMenu" menu="root-menu" atCursor="no" />
+    </keybind>
+    <keybind key="W-Return">
+      <action name="Execute" command="kitty" />
+    </keybind>
+    <keybind key="W-space">
+      <action name="Execute" command="fuzzel" />
+    </keybind>
+    <keybind key="C-W-Left">
+      <action name="GoToDesktop" to="left" />
+      <action name="Execute" command="bash -c 'echo left > /tmp/workspace'" />
+    </keybind>
+    <keybind key="C-W-Right">
+      <action name="GoToDesktop" to="right" />
+      <action name="Execute" command="bash -c 'echo right > /tmp/workspace'" />
+    </keybind>
+    <keybind key="W-v">
+      <action name="Execute" command="~/.config/labwc/scripts/clipman-fuzzel" />
+    </keybind>
+    <keybind key="W-l">
+      <action name="Execute" command="~/.config/swaylock/default" />
+    </keybind>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute" command="wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+" />
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute" command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-" />
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" />
+    </keybind>
+        <keybind key="XF86AudioMicMute">
+      <action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle" />
+    </keybind>
+    <keybind key="XF86_MonBrightnessUp">
+      <action name="Execute" command="~/.config/labwc/scripts/ybacklight -inc 10" />
+    </keybind>
+    <keybind key="XF86_MonBrightnessDown">
+      <action name="Execute" command="~/.config/labwc/scripts/ybacklight -dec 10" />
+    </keybind>
+  </keyboard>
+
+  <mouse>
+    <default />
+    <!-- Show a custom menu on desktop right click -->
+    <context name="Root">
+      <mousebind button="Right" action="Press">
+        <action name="ShowMenu" menu="some-custom-menu" />
+      </mousebind>
+    </context>
+  </mouse>
+
+  <desktops>
+    <popupTime>1000</popupTime>
+    <names>
+      <name>default</name>
+      <name>dev</name>
+      <name>comms</name>
+    </names>
+  </desktops>
+</labwc_config>

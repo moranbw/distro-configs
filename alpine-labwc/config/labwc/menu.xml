@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_menu>
+<menu id="root-menu" label="root-menu">
+  <menu id="Development" label="Development">
+    <item label="Code - OSS" icon="com.visualstudio.code.oss">
+      <action name="Execute"><command>/usr/bin/code-oss --unity-launch</command></action>
+    </item>
+    <item label="electron21" icon="electron">
+      <action name="Execute"><command>electron</command></action>
+    </item>
+  </menu> <!-- Development -->
+  <menu id="Internet" label="Internet">
+    <item label="Dissent" icon="so.libdb.dissent">
+      <action name="Execute"><command>/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=dissent so.libdb.dissent</command></action>
+    </item>
+    <item label="Firefox" icon="firefox">
+      <action name="Execute"><command>firefox</command></action>
+    </item>
+  </menu> <!-- Internet -->
+  <menu id="Multimedia" label="Multimedia">
+    <item label="PulseAudio Volume Control" icon="multimedia-volume-control">
+      <action name="Execute"><command>pavucontrol</command></action>
+    </item>
+  </menu> <!-- Multimedia -->
+  <menu id="Settings" label="Settings">
+    <item label="iwgtk" icon="iwgtk">
+      <action name="Execute"><command>iwgtk</command></action>
+    </item>
+    <item label="PulseAudio Volume Control" icon="multimedia-volume-control">
+      <action name="Execute"><command>pavucontrol</command></action>
+    </item>
+  </menu> <!-- Settings -->
+  <menu id="System" label="System">
+    <item label="kitty" icon="kitty">
+      <action name="Execute"><command>kitty</command></action>
+    </item>
+  </menu> <!-- System -->
+</menu> <!-- root-menu -->
+</openbox_menu>

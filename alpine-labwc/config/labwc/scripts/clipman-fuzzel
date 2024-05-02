@@ -1,0 +1,4 @@
+#!/bin/bash
+
+clipman pick --tool=CUSTOM --tool-args="fuzzel --config=/home/brian/.config/fuzzel/clipman.ini -d"
+
