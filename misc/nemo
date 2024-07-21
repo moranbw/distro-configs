@@ -1,0 +1,3 @@
+doas apk add nemo
+doas apk add gsettings-desktop-schemas
+# doas apk add lxappearance

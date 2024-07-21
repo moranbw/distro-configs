@@ -2,7 +2,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "Overpass, Overpass Light, Font Awesome 6 Free";
+    font-family: "Overpass, Overpass Light, Symbols Nerd Font";
     font-size: 11pt;
     min-height: 0;
 }
@@ -34,4 +34,24 @@ window#waybar {
 #clock {
     padding: 0 4px;
     background: @background;
+}
+
+#battery {
+    font-size: 13pt;
+}
+
+#wireplumber {
+    font-size: 13pt;
+}
+
+#custom-wlogout {
+    font-size: 13pt;
+}
+
+#custom-labwc-workspaces {
+    font-size: 13pt;
+}
+
+#custom-wireplumber {
+    font-size: 13pt;
 }

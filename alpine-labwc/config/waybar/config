@@ -5,21 +5,23 @@
   "spacing": 12,
   "modules-left": [
    "custom/wlogout",
-   "custom/labwc-workspaces",
-   "wlr/taskbar"
+   "custom/labwc-workspaces"
   ],
   "modules-center": [
   ],
   "modules-right": [
     "custom/weather",
-    "wireplumber",
+    "custom/wireplumber",
     "network",
     "battery",
     "clock"
   ],
   "network": {
-    "format-wifi": "",
+    "format": "{icon}",
+    "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
+    "format-disconnected": "󰤮",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) -> {ipaddr}",
+    "tooltip-format-disconnected": "Disconnected",
     "on-click": "iwgtk"
   },
   "wlr/taskbar": {
@@ -33,17 +35,17 @@
     "format-muted": "✖",
     "format-icons": ["", "", ""],
     "tooltip-format": "{volume}%",
-    "on-click": "pavucontrol",
+    "on-click": "pavucontrol"
   },
   "battery": {
     "bat": "BAT0",
     "interval": 60,
     "states": {
-        "warning": 30,
+        "warning": 30
     },
     "format": "{icon}",
-    "format-charging": "{icon}⌁",
-    "format-icons": ["", "", "", "", ""],
+    "format-charging": "{icon}󱐋",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "tooltip-format-charging": "To full: {time} ({capacity}%)",
     "tooltip-format-discharging": "To empty: {time} ({capacity}%)",
     "max-length": 25
@@ -68,9 +70,17 @@
     "tooltip": false
   },
   "custom/wlogout": {
-    "format": "",
+    "format": "",
     "on-click": "wlogout",
     "tooltip": false
+  },
+  "custom/wireplumber": {
+    "exec": "~/.config/waybar/scripts/getVolume.ts",
+    "return-type": "json",
+    "interval": 1,
+    "format": "{}",
+    "tooltip": true,
+    "on-click": "pavucontrol"
   }
 }
 

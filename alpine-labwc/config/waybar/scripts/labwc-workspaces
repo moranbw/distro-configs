@@ -2,8 +2,8 @@
 
 # <config>
 NUMBER=3
-SYMBOL_CURRENT="⬜"
-SYMBOL_OTHER="◻"
+SYMBOL_CURRENT=""
+SYMBOL_OTHER=""
 PIPE=/tmp/workspace
 WRAP=true
 # </config>

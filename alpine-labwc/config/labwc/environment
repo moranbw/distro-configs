@@ -63,6 +63,13 @@
 
 XDG_CURRENT_DESKTOP=wlroots
 
+## added for potential "desktop" fix
+XDG_SESSION_DESKTOP=wlroots
+XDG_CURRENT_SESSION=wlroots
+XDG_CURRENT_DESKTOP=wlroots
+GTK_USE_PORTAL=1
+#SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/keyring/ssh
+
 ##
 ## This causes a virtual output to be created automatically whenever there
 ## are no outputs around. This helps for cases like wayvnc so there is always

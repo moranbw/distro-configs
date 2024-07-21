@@ -1,3 +1,5 @@
 #!/bin/sh
 # used for launching with seatd (which does not handle XDG stuff)
 XDG_RUNTIME_DIR=~/.run dbus-launch labwc
+
+# XDG_CONFIG_HOME=~/.config/labwc XDG_RUNTIME_DIR=~/.run dbus-launch labwc

@@ -15,14 +15,18 @@
   </theme>
 
   <placement>
-    <policy>cursor</policy>
+    <policy>automatic</policy>
   </placement>
+
+  <!--snapping>
+    <overlay>
+      <enabled>yes</enabled>
+      <delay inner="500" outer="500"/>
+    </overlay>
+  </snapping-->
 
   <keyboard>
     <default />
-    <keybind key="W-o">
-      <action name="ShowMenu" menu="root-menu" atCursor="no" />
-    </keybind>
     <keybind key="W-Return">
       <action name="Execute" command="kitty" />
     </keybind>
@@ -56,21 +60,21 @@
       <action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle" />
     </keybind>
     <keybind key="XF86_MonBrightnessUp">
-      <action name="Execute" command="~/.config/labwc/scripts/ybacklight -inc 10" />
+      <action name="Execute" command="ybacklight -inc 10" />
     </keybind>
     <keybind key="XF86_MonBrightnessDown">
-      <action name="Execute" command="~/.config/labwc/scripts/ybacklight -dec 10" />
+      <action name="Execute" command="ybacklight -dec 10" />
     </keybind>
   </keyboard>
 
   <mouse>
     <default />
     <!-- Show a custom menu on desktop right click -->
-    <context name="Root">
+    <!--context name="Root">
       <mousebind button="Right" action="Press">
         <action name="ShowMenu" menu="some-custom-menu" />
       </mousebind>
-    </context>
+    </context-->
   </mouse>
 
   <desktops>
@@ -81,4 +85,10 @@
       <name>comms</name>
     </names>
   </desktops>
+
+  <windowRules>
+    <!--windowRule identifier="nemo-desktop" skipTaskbar="yes" skipWindowSwitcher="yes" ignoreFocusRequest="no">
+      <action name="ToggleAlwaysOnBottom"/>
+    </windowRule-->
+  </windowRules>
 </labwc_config>

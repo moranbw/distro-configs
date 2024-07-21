@@ -1,5 +1,10 @@
 # Example autostart file
 
+#keyring stuff
+/usr/bin/gnome-keyring-daemon -r -d > /dev/null 2>&1 &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 >/dev/null 2>&1 &
+/usr/libexec/gcr-ssh-agent-wrapper > /dev/null 2>&1 &
+
 # Start pipewire
 /usr/libexec/pipewire-launcher >/dev/null 2>&1 &
 
@@ -16,6 +21,7 @@ swaybg -i ~/.config/wallpaper  >/dev/null 2>&1 &
 kanshi >/dev/null 2>&1 &
 
 # Launch a panel such as yambar or waybar.
+#waybar -l debug >/home/brian/.config/waybar/waybar-log 2>&1 &
 waybar >/dev/null 2>&1 &
 
 # Enable notifications. Typically GNOME/KDE application notifications go
@@ -36,5 +42,13 @@ swayidle -w \
 	resume 'wlopm --on \*' \
 	before-sleep 'swaylock -f -c 000000' >/dev/null 2>&1 &
 
+#nemo-desktop >/dev/null 2>&1 &
+
 rm ~/.local/share/clipman.json
-exec wl-paste -t text --watch clipman store --max-items=10 --no-persist --histpath="~/.local/share/clipman.json"
+wl-paste -t text \
+	--watch clipman store \
+	--max-items=10 \
+	--no-persist \
+	--histpath="~/.local/share/clipman.json" >/dev/null 2>&1 &
+
+wlumwa >/dev/null 2>&1 &
